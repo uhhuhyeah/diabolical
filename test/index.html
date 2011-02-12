@@ -50,6 +50,9 @@
 			$('#trigger').click(function() {
 				var dialog = new Dialog(options);
 				dialog.show();
+				jQuery(window).bind('resize', function() {
+							    dialog.handleResize();
+							  });
 				return false;
 			});
 		});

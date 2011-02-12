@@ -27,3 +27,31 @@
   box-shadow: 10px 10px 10px #888;
 	z-index:99999;
 }
+
+#dialogBox #dialogCloseBar {
+	text-align:right;
+	background: #bbb;
+	margin:0 -10px;
+	margin-top:10px;
+	padding:5px 10px;
+}
+
+#dialogBox a#dialogClose {
+	color:#fff;
+	text-shadow: #ccc 1px 1px 1px;
+	text-decoration:none;
+	font-family:helvetica, sans-serif;
+	font-size:12px;
+	padding:2px 3px;
+	border:1px solid #bbb;
+}
+
+#dialogBox a#dialogClose:hover {
+  border-bottom:1px solid #ccc;
+  border-right:1px solid #ccc;
+}
+
+/*TODO for ie*/
+/*#dialogBox > p {
+  margin:0;
+}*/
