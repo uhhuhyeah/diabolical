@@ -33,6 +33,16 @@
 			<h1>Test page</h1>
 			<p><a href="#" id="trigger">Click Me</a></p>
     </div>
+
+		<div id="addMe">
+			<h3>Some Heading</h3>
+			<ul>
+				<li>ABC</li>
+				<li>DEF</li>
+				<li>GHI</li>
+			</ul>
+			<p>Last paragraph <a href="http://www.google.com/">with a link</a>.</p>
+		</div>
     
     <footer>
 
@@ -41,25 +51,15 @@
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script type="text/javascript" src="../lib/jquery.diabolical.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="../lib/jquery.diabolical.css">
+  <!-- <link rel="stylesheet" href="../lib/jquery.diabolical.css"> -->
 	<script type="text/javascript" charset="utf-8">
-		var options = {
-			title: 'Some Title'
-		}
 		$(function() {
+			
+			$('body').diabolical({'dialogWidth':500, 'closeText':'No thanks','title': 'Dialog Title', 'contentText':$('#addMe').clone()});
+			var dialog = $('body').data('diabolical');
+			
 			$('#trigger').click(function() {
-				
-				$('body').diabolical({'dialogWidth':500, 'closeText':'No thanks','title': 'Dialog Title', 'contentText':'<p>Foo bar for copy</p>'});
-				var dialog = $('body').data('diabolical');
 				dialog.show();
-				// dialog.show();
-				// var dialog = new Dialog(options);
-				// dialog.show();
-				// jQuery(window).bind('resize', function() {
-				// 			    dialog.handleResize();
-				// 			  });
-				
-				
 				return false;
 			});
 		});
