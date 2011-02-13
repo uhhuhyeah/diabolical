@@ -10,9 +10,10 @@
       'contentText' : '',
       'fadeOutDialog':1,
       'fadeInDialog':1,
-      'cssPath':'../lib/jquery.diabolical.css'
+      'cssFile':'jquery.diabolical.css'
     };
     if (options) { $.extend(settings, options); };
+    var cssPath = '../src/' + settings.cssFile;
 
 
     // Public methods
@@ -80,7 +81,7 @@
       var dialogBox = $('<div/>', {id:'dialogBox', css: {left: windowSize[0] / 2 - settings.dialogWidth / 2, top: 40, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
       obj.modalContainer.append(dialogBox);
       
-      elem.append('<link rel="stylesheet" href="' + settings.cssPath + '">');
+      elem.append('<link rel="stylesheet" href="' + cssPath + '">');
       return true;
     };
    
