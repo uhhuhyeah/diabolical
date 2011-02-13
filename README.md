@@ -124,7 +124,7 @@ This is the hidden gem. During setup you can pass a URL that points to the conte
 		};
 	</script>
 
-If you're using Rails, you might want to consider registering a new MIME type of `:dialog` then in you can have view files for the dialog like `app/views/sessions/new.dialog.erb`.
+If you're using Rails, you might want to consider registering a new MIME type of `:dialog` then you can have view files especially for the dialog like `app/views/sessions/new.dialog.erb`.
 
 Settings/Options<a name="settings"></a>
 ----------------
