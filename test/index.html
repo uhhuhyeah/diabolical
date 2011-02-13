@@ -54,8 +54,8 @@
   <!-- <link rel="stylesheet" href="../lib/jquery.diabolical.css"> -->
 	<script type="text/javascript" charset="utf-8">
 		$(function() {
-			
-			$('body').diabolical({'dialogWidth':500, 'closeText':'No thanks','title': 'Dialog Title', 'contentText':$('#addMe').clone()});
+			// var content = $.get('content.html');
+			$('body').diabolical({'dialogWidth':500, 'closeText':'No thanks','title': 'Dialog Title', 'contentURL': 'content.html'});
 			var dialog = $('body').data('diabolical');
 			
 			$('#trigger').click(function() {
