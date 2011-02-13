@@ -139,7 +139,7 @@ Settings/Options<a name="settings"></a>
 	Relative or absolute URL the contents of which should be displayed within the `#dialogContent` div. No default (it's nil).
 	
 * `cssTheme`
-	CSS filename of the dialog's theme. Defaults to `default.css`. CSS files live in `src` and should import the `base.css` file.
+	CSS filename of the dialog's theme. Defaults to `default.css`. CSS files live in `src` and should import the `base.css` file. You don't need to include a link to this stylesheet in your HTML. Diabolical will take care of loading that for you.
 	
 * `dialogWidth`
 	Width of the dialog box as an integer. Defaults to `400`(px).
