@@ -13,7 +13,7 @@ This library is a work in progress. **Please do not use this in production**. It
 Installation
 ------------
 
-This library is a jQuery plugin so make sure to include jQuery too. Diabolical has been developed using jQuery 1.4.4.. I've no idea how it will behave with another version. See above note about this being a work in progress and that you probably shouldn't be using it in production.
+This library is a jQuery plugin so make sure to include [jQuery too](http://jquery.com). Diabolical has been developed using jQuery 1.4.4.. I've no idea how it will behave with another version. See above note about this being a work in progress and that you probably shouldn't be using it in production.
 
 Copy the diabolical directory to where ever you like keeping your javascript files. For example `/javascripts`
 
@@ -22,7 +22,7 @@ Copy the diabolical directory to where ever you like keeping your javascript fil
 	
 ### Set up
 
-Diabolical takes an option list of settings (as a JSON hash) where you can override the defaults. See 'Settings/Options' for available options.
+Diabolical takes an option list of settings (as a JSON hash) where you can override the defaults. See '[Settings/Options](#settings)' for available options.
 
 	<script type="text/javascript">
 		// setup
@@ -33,7 +33,7 @@ Diabolical takes an option list of settings (as a JSON hash) where you can overr
 		}
 	</script>
 	
-Next we attach the dialog to a element on the page. Which element you choose is mostly personal preference, but you should only attach one dialog to any one element. By default, you'll probably use the `body` element.
+Next we attach the dialog to a element on the page. Which element you choose is mostly personal preference, but you should only attach one dialog instance to any one element. By default, you'll probably use the `body` element.
 	
 	<script type="text/javascript">
 		// setup
@@ -83,49 +83,49 @@ Diabolical supports *four* ways of being passed content to be displayed
 **1. Plain Text**
 You can pass plain strings to the dialog using `title`, `contentText` or both.
 
- <script>
- 	 var options = {
+	<script>
+		 var options = {
 	   'title': 'Behold!',
 		 'contentText' : 'Check out my diabolically awesome dialog box.'
 	 }
- </script>
+	</script>
 
 **2. HTML**
 You can also pass HTML to the `contentText` option.
 
- <script>
-   var options = {
+	<script>
+	  var options = {
 	   'contentText' : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
 	 }
- </script>
+	</script>
 	
 **3. jQuery node**
 You can also grab some other element in the DOM to display. 
 
- <div id="dialog-me">
+	<div id="dialog-me">
 	 <h2>Behold!</h2>
- </div>
-	
- <script>
-   var options = {
+	</div>
+
+	<script>
+	  var options = {
 	   'contentText' : $('#dialog-me')
 	 }
- </script>
+	</script>
 	
 Note, this will remove the `dialog-me` div from the page. Use `$('#dialog-me').clone()` instead if you want to leave the original `dialog-me` div alone.
 
 **4. Remote resource**
 This is the hidden gem. During setup you can pass a URL that points to the content you want to pass into the dialog and it doesn't get fetched until or unless `show()` gets called. The remote resource is fetched asynchronously of course and the dialog is loaded instantly (with a spinner.gif).
 
- <script>
-   var options = {
+	<script>
+	  var options = {
 	   'contentURL' : '/login'
 	 }
- </script>
+	</script>
 
-If you're using Rails, you might want to consider registering a new MIME type of `:dialog` then in you can have view files for the dialog (like `app/views/sessions/new.dialog.erb`).
+If you're using Rails, you might want to consider registering a new MIME type of `:dialog` then in you can have view files for the dialog like `app/views/sessions/new.dialog.erb`.
 
-Settings/Options
+Settings/Options<a name="settings"></a>
 ----------------
 
 *	`closeText`
