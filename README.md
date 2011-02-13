@@ -84,32 +84,32 @@ Diabolical supports *four* ways of being passed content to be displayed
 You can pass plain strings to the dialog using `title`, `contentText` or both.
 
 	<script>
-		 var options = {
-	   'title': 'Behold!',
-		 'contentText' : 'Check out my diabolically awesome dialog box.'
-	 }
+		var options = {
+			'title': 'Behold!',
+			'contentText' : 'Check out my diabolically awesome dialog box.'
+		}
 	</script>
 
 **2. HTML**
 You can also pass HTML to the `contentText` option.
 
 	<script>
-	  var options = {
-	   'contentText' : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
-	 }
+		var options = {
+			'contentText' : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
+		}
 	</script>
 	
 **3. jQuery node**
 You can also grab some other element in the DOM to display. 
 
 	<div id="dialog-me">
-	 <h2>Behold!</h2>
+		<h2>Behold!</h2>
 	</div>
 
 	<script>
-	  var options = {
-	   'contentText' : $('#dialog-me')
-	 }
+		var options = {
+			'contentText' : $('#dialog-me')
+		}
 	</script>
 	
 Note, this will remove the `dialog-me` div from the page. Use `$('#dialog-me').clone()` instead if you want to leave the original `dialog-me` div alone.
@@ -118,9 +118,9 @@ Note, this will remove the `dialog-me` div from the page. Use `$('#dialog-me').c
 This is the hidden gem. During setup you can pass a URL that points to the content you want to pass into the dialog and it doesn't get fetched until or unless `show()` gets called. The remote resource is fetched asynchronously of course and the dialog is loaded instantly (with a spinner.gif).
 
 	<script>
-	  var options = {
-	   'contentURL' : '/login'
-	 }
+		var options = {
+			'contentURL' : '/login'
+		}
 	</script>
 
 If you're using Rails, you might want to consider registering a new MIME type of `:dialog` then in you can have view files for the dialog like `app/views/sessions/new.dialog.erb`.
