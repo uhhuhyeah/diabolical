@@ -10,10 +10,10 @@
       'contentText' : '',
       'fadeOutDialog':1,
       'fadeInDialog':1,
-      'cssFile':'default.css'
+      'cssTheme':'default.css'
     };
     if (options) { $.extend(settings, options); };
-    var cssPath = '../src/' + settings.cssFile;
+    var cssPath = '../src/' + settings.cssTheme;
     console.log('cssPath: ' + cssPath)
 
 

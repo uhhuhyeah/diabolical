@@ -9,50 +9,28 @@
 #dialogBox {
 	width:450px;
 	text-align:center;
-	background:#eee;
-	color:#666;
 	padding:10px;
 	padding-bottom:0;
-	text-shadow: #fff 1px 1px 1px;
-	-webkit-border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-
   position:absolute;
   -webkit-box-shadow: 10px 10px 10px #888;
   -moz-box-shadow: 10px 10px 10px #888;
   box-shadow: 10px 10px 10px #888;
 	z-index:99999;
-	
 	font-family:helvetica, sans-serif;
 }
 
 #dialogBox #dialogCloseBar {
 	text-align:right;
-	background: #bbb;
 	margin:0 -10px;
 	margin-top:10px;
 	padding:7px 10px;
 }
 
 #dialogBox a#dialogClose {
-	color:#fff;
-	text-shadow: #bbb 1px 1px 1px;
 	text-decoration:none;
 	font-family:helvetica, sans-serif;
 	font-size:12px;
-	padding:3px 7px;
-	border-bottom:1px solid #ccc;
-  border-right:1px solid #ccc;
-  border-top:1px solid #bbb;
-  border-left:1px solid #bbb;
-  background:#aaa;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+
 }
 
 #dialogBox a#dialogClose:hover {

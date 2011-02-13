@@ -1,1 +1,37 @@
 @import url('jquery.diabolical.base.css');
+
+#dialogBox {
+	background:#eee;
+	color:#666;
+	padding:10px;
+	padding-bottom:0;
+	text-shadow: #fff 1px 1px 1px;
+	-webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#dialogBox #dialogCloseBar {
+	background: #bbb;
+}
+
+#dialogBox a#dialogClose {
+	color:#fff;
+	text-shadow: #bbb 1px 1px 1px;
+	padding:3px 7px;
+	border-bottom:1px solid #ccc;
+  border-right:1px solid #ccc;
+  border-top:1px solid #bbb;
+  border-left:1px solid #bbb;
+  background:#aaa;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+#dialogBox a#dialogClose:hover {
+  background:#afafaf;
+}
