@@ -67,7 +67,7 @@ A common use case is to trigger the dialog box when the user clicks on a specifi
 			$('body').diabolical(options);
 			var dialog = $('body').data('diabolical');
 			
-			// Bind the link's click event to the dialog's show method
+			// Bind the link's click event to the dialog's show() method
 			$('#login-link').click(function() {
 				dialog.show();
 				return false; // prevents the elements default behavour. I.e. taking the user to '/login'.
@@ -116,7 +116,7 @@ You can also grab some other element in the DOM to display in the dialog.
 Note, this will remove the `dialog-me` div from the page. Use `$('#dialog-me').clone()` instead if you want to leave the original `dialog-me` div alone.
 
 **4. Remote resource**
-This is the hidden gem. During setup you can pass a URL that points to the content you want to pass into the dialog and it doesn't get fetched until or unless `show()` gets called. The remote resource is fetched asynchronously of course and the dialog is loaded instantly (with a spinner.gif) to keep your users amused should the remote response take a while to return it's content.
+This is the hidden gem. During setup you can pass a URL that points to the content you want to pass into the dialog and it doesn't get fetched until or unless `show()` gets called. The remote resource is fetched asynchronously of course and the dialog is loaded instantly (with a spinner.gif to keep your users amused should the remote response take a while to return it's content).
 
 	<script>
 		var options = {
