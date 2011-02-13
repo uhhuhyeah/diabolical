@@ -10,10 +10,11 @@
       'contentText' : '',
       'fadeOutDialog':1,
       'fadeInDialog':1,
-      'cssFile':'jquery.diabolical.css'
+      'cssFile':'default.css'
     };
     if (options) { $.extend(settings, options); };
     var cssPath = '../src/' + settings.cssFile;
+    console.log('cssPath: ' + cssPath)
 
 
     // Public methods
