@@ -13,7 +13,7 @@ This library is a work in progress. **Please do not use this in production**. It
 Installation
 ------------
 
-This library is a jQuery plugin so make sure to include [jQuery too](http://jquery.com). Diabolical has been developed using jQuery 1.4.4.. I've no idea how it will behave with another version. See above note about this being a work in progress and that you probably shouldn't be using it in production.
+This library is a jQuery plugin so make sure to include [jQuery](http://jquery.com) too. Diabolical has been developed using jQuery 1.4.4.. I've no idea how it will behave with another version. See above note about this being a work in progress and that you probably shouldn't be using it in production.
 
 Copy the diabolical directory to where ever you like keeping your javascript files. For example `/javascripts`
 
@@ -30,7 +30,7 @@ Diabolical takes an option list of settings (as a JSON hash) where you can overr
 			'cancelText':'Cancel',
 			'title': 'Behold!',
 			'contentText: 'Check out my diabolically awesome dialog box.'
-		}
+		};
 	</script>
 	
 Next we attach the dialog to a element on the page. Which element you choose is mostly personal preference, but you should only attach one dialog instance to any one element. By default, you'll probably use the `body` element.
@@ -41,7 +41,7 @@ Next we attach the dialog to a element on the page. Which element you choose is 
 			'cancelText':'Cancel',
 			'title': 'Behold!',
 			'contentText: 'Check out my diabolically awesome dialog box.'
-		}
+		};
 
 		// attach to body and grab a variable for the dialog that we can reference later
 		$('body').diabolical(options);
@@ -61,7 +61,7 @@ A common use case is to trigger the dialog box when the user clicks on a specifi
 				'cancelText':'Cancel',
 				'title': 'Behold!',
 				'contentText: 'Check out my diabolically awesome dialog box.'
-			}
+			};
 
 			// attach to body and grab a variable for the dialog that we can reference later
 			$('body').diabolical(options);
@@ -87,7 +87,7 @@ You can pass plain strings to the dialog using `title`, `contentText` or both.
 		var options = {
 			'title': 'Behold!',
 			'contentText' : 'Check out my diabolically awesome dialog box.'
-		}
+		};
 	</script>
 
 **2. HTML**
@@ -96,7 +96,7 @@ You can also pass HTML to the `contentText` option.
 	<script>
 		var options = {
 			'contentText' : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
-		}
+		};
 	</script>
 	
 **3. jQuery node**
@@ -109,7 +109,7 @@ You can also grab some other element in the DOM to display.
 	<script>
 		var options = {
 			'contentText' : $('#dialog-me')
-		}
+		};
 	</script>
 	
 Note, this will remove the `dialog-me` div from the page. Use `$('#dialog-me').clone()` instead if you want to leave the original `dialog-me` div alone.
@@ -120,7 +120,7 @@ This is the hidden gem. During setup you can pass a URL that points to the conte
 	<script>
 		var options = {
 			'contentURL' : '/login'
-		}
+		};
 	</script>
 
 If you're using Rails, you might want to consider registering a new MIME type of `:dialog` then in you can have view files for the dialog like `app/views/sessions/new.dialog.erb`.
