@@ -13,16 +13,16 @@ This library is a work in progress. **Please do not use this in production**. It
 Installation
 ------------
 
-This library is a jQuery plugin so make sure to include [jQuery](http://jquery.com) too. Diabolical has been developed using jQuery 1.4.4.. I've no idea how it will behave with another version. See above note about this being a work in progress and that you probably shouldn't be using it in production.
+This library is a jQuery plugin so make sure to include [jQuery](http://jquery.com) too. Diabolical has been developed using jQuery 1.4.4.. I've no idea how it will behave with another version. See the above note about this being a work in progress and that you probably shouldn't be using it in production.
 
 Copy the diabolical directory to where ever you like keeping your javascript files. For example `/javascripts`
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	script src="/javascripts/diabolical/src/diabolical.js" type="text/javascript"></script>
+	<script src="/javascripts/diabolical/src/diabolical.js" type="text/javascript"></script>
 	
 ### Set up
 
-Diabolical takes an option list of settings (as a JSON hash) where you can override the defaults. See '[Settings/Options](#settings)' for available options.
+Diabolical takes an optional list of settings (as a JSON hash) where you can override the defaults. See '[Settings/Options](#settings)' for available options.
 
 	<script type="text/javascript">
 		// setup
@@ -66,7 +66,8 @@ A common use case is to trigger the dialog box when the user clicks on a specifi
 			// attach to body and grab a variable for the dialog that we can reference later
 			$('body').diabolical(options);
 			var dialog = $('body').data('diabolical');
-				
+			
+			// Bind the link's click event to the dialog's show method
 			$('#login-link').click(function() {
 				dialog.show();
 				return false; // prevents the elements default behavour. I.e. taking the user to '/login'.
@@ -100,7 +101,7 @@ You can also pass HTML to the `contentText` option.
 	</script>
 	
 **3. jQuery node**
-You can also grab some other element in the DOM to display. 
+You can also grab some other element in the DOM to display in the dialog. 
 
 	<div id="dialog-me">
 		<h2>Behold!</h2>
@@ -115,7 +116,7 @@ You can also grab some other element in the DOM to display.
 Note, this will remove the `dialog-me` div from the page. Use `$('#dialog-me').clone()` instead if you want to leave the original `dialog-me` div alone.
 
 **4. Remote resource**
-This is the hidden gem. During setup you can pass a URL that points to the content you want to pass into the dialog and it doesn't get fetched until or unless `show()` gets called. The remote resource is fetched asynchronously of course and the dialog is loaded instantly (with a spinner.gif).
+This is the hidden gem. During setup you can pass a URL that points to the content you want to pass into the dialog and it doesn't get fetched until or unless `show()` gets called. The remote resource is fetched asynchronously of course and the dialog is loaded instantly (with a spinner.gif) to keep your users amused should the remote response take a while to return it's content.
 
 	<script>
 		var options = {
@@ -138,7 +139,7 @@ Settings/Options<a name="settings"></a>
 	Relative or absolute URL the contents of which should be displayed within the `#dialogContent` div. No default (it's nil).
 	
 * `cssTheme`
-	CSS filename of the dialog's theme. Defaults to `default.css`. CSS files live in src and should import the base.css file.
+	CSS filename of the dialog's theme. Defaults to `default.css`. CSS files live in `src` and should import the `base.css` file.
 	
 * `dialogWidth`
 	Width of the dialog box as an integer. Defaults to `400`(px).
