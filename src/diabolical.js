@@ -10,10 +10,11 @@
       'contentText' : '',
       'fadeOutDialog':1,
       'fadeInDialog':1,
-      'cssTheme':'default.css'
+      'cssTheme':'default.css',
+      'pluginLocation':'/javascripts/diabolical/src/'
     };
     if (options) { $.extend(settings, options); };
-    var cssPath = '../src/' + settings.cssTheme;
+    var cssPath = settings.pluginLocation + settings.cssTheme;
     console.log('cssPath: ' + cssPath)
 
 
@@ -22,6 +23,7 @@
       var contentBox = obj.modalContainer.find('#dialogContent');
       // set content (from a URL or settings)
       if (settings.contentURL) {
+        contentBox.html($('<img/>',{src: settings.pluginLocation + 'spinner.gif'}));
         $.get(settings.contentURL, function(data) {
           contentBox.html(data);
         });
