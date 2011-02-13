@@ -22,7 +22,7 @@ Copy the diabolical directory to where ever you like keeping your javascript fil
 	
 ### Set up
 
-Diabolical takes an optional list of settings (as a JSON hash) where you can override the defaults. See '[Settings/Options](#settings)' for available options.
+Diabolical takes an optional list of settings (as a JSON hash) where you can override the defaults. See '[Settings/Options](#settings)' for available options and their defaults.
 
 	<script type="text/javascript">
 		// setup
