@@ -19,9 +19,9 @@
 
     // Public methods
     this.show = function() {
+      var contentBox = obj.modalContainer.find('#dialogContent');
       // set content (from a URL or settings)
       if (settings.contentURL) {
-        var contentBox = obj.modalContainer.find('#dialogContent');
         $.get(settings.contentURL, function(data) {
           contentBox.html(data);
         });
