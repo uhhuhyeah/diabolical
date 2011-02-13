@@ -26,6 +26,8 @@
   -moz-box-shadow: 10px 10px 10px #888;
   box-shadow: 10px 10px 10px #888;
 	z-index:99999;
+	
+	font-family:helvetica, sans-serif;
 }
 
 #dialogBox #dialogCloseBar {
@@ -38,21 +40,28 @@
 
 #dialogBox a#dialogClose {
 	color:#fff;
-	text-shadow: #ccc 1px 1px 1px;
+	text-shadow: #bbb 1px 1px 1px;
 	text-decoration:none;
 	font-family:helvetica, sans-serif;
 	font-size:12px;
-	padding:2px 3px;
-	border:1px solid #bbb;
+	padding:3px 7px;
+	border-bottom:1px solid #ccc;
+  border-right:1px solid #ccc;
+  border-top:1px solid #bbb;
+  border-left:1px solid #bbb;
+  background:#aaa;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
 }
 
 #dialogBox a#dialogClose:hover {
-  border-bottom:1px solid #ccc;
-  border-right:1px solid #ccc;
+  background:#afafaf;
 }
 
 #dialogBox h2 {
   margin:5px 0;
+  line-height:120%;
 }
 
 /*TODO for ie*/
