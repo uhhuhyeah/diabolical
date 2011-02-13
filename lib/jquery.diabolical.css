@@ -1,7 +1,7 @@
 #dialogBackground {
 	position:absolute;
 	background:#000;
-	background:rgba(0,0,0,.4);
+  background:rgba(0,0,0,.3);
 	top:0;
 	left:0;
 }
@@ -33,7 +33,7 @@
 	background: #bbb;
 	margin:0 -10px;
 	margin-top:10px;
-	padding:5px 10px;
+	padding:7px 10px;
 }
 
 #dialogBox a#dialogClose {
@@ -49,6 +49,10 @@
 #dialogBox a#dialogClose:hover {
   border-bottom:1px solid #ccc;
   border-right:1px solid #ccc;
+}
+
+#dialogBox h2 {
+  margin:5px 0;
 }
 
 /*TODO for ie*/
