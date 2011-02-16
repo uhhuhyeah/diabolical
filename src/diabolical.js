@@ -27,7 +27,6 @@
         $.get(settings.contentURL, function(data) {
           contentBox.html(data);
         });
-        });
       } else {
         contentBox.html(settings.contentText);
       }
