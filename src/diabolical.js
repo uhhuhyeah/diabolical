@@ -15,7 +15,7 @@
     };
     if (options) { $.extend(settings, options); };
     var cssPath = settings.pluginLocation + settings.cssTheme;
-    console.log('cssPath: ' + cssPath)
+    // console.log('cssPath: ' + cssPath)
 
 
     // Public methods
@@ -24,16 +24,15 @@
       // set content (from a URL or settings)
       if (settings.contentURL) {
         contentBox.html($('<img/>',{src: settings.pluginLocation + 'spinner.gif'}));
-        var jqxhr = $.get(settings.contentURL, function(data) {
+        $.get(settings.contentURL, function(data) {
           contentBox.html(data);
-        }).error(function(){
-          alert('error');
+        });
         });
       } else {
         contentBox.html(settings.contentText);
       }
       
-      console.log('show() called!');           
+      // console.log('show() called!');           
       var e = elem.append(obj.modalContainer);
       if (settings.fadeInDialog == 1) {
         obj.modalContainer.hide().fadeIn();
@@ -72,14 +71,14 @@
       result[0] = docWidth;
       result[1] = docHeight;
 
-      console.log(result);
+      // console.log(result);
       return result;
     };
       
        
     // Private methods
     var setup = function() {
-      console.log('setup called');
+      // console.log('setup called');
       var windowSize = obj.getWindowSize();
       obj.modalContainer = $('<div/>', {id: 'dialogBackground', css: { width: windowSize[0], height: windowSize[1], top: 0, left: 0, 'min-height': windowSize[1] }});
       var closeLink = $('<a/>', {id:'dialogClose', href:'#'}).text(settings.closeText);
