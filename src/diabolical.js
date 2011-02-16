@@ -15,8 +15,6 @@
     };
     if (options) { $.extend(settings, options); };
     var cssPath = settings.pluginLocation + settings.cssTheme;
-    // console.log('cssPath: ' + cssPath)
-
 
     // Public methods
     this.show = function() {
@@ -30,8 +28,7 @@
       } else {
         contentBox.html(settings.contentText);
       }
-      
-      // console.log('show() called!');           
+        
       var e = elem.append(obj.modalContainer);
       if (settings.fadeInDialog == 1) {
         obj.modalContainer.hide().fadeIn();
@@ -55,29 +52,14 @@
      
     this.getWindowSize = function() {
       var result = new Array(2);
-      var docWidth = 0, docHeight = 0;
-      docWidth = $(window).width();
-      docHeight = $(document).height();
-      // if (typeof (window.innerWidth) == 'number') {
-      //   //Non-IE
-      //   myWidth = document.width;
-      //   myHeight = document.height;
-      // } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-      //   //IE 6+ in 'standards compliant mode'
-      //   myWidth = document.documentElement.clientWidth;
-      //   myHeight = document.documentElement.clientHeight;
-      // }
-      result[0] = docWidth;
-      result[1] = docHeight;
-
-      // console.log(result);
+      result[0] = $(window).width();
+      result[1] = $(document).height();
       return result;
     };
       
        
     // Private methods
     var setup = function() {
-      // console.log('setup called');
       var windowSize = obj.getWindowSize();
       obj.modalContainer = $('<div/>', {id: 'dialogBackground', css: { width: windowSize[0], height: windowSize[1], top: 0, left: 0, 'min-height': windowSize[1] }});
       var closeLink = $('<a/>', {id:'dialogClose', href:'#'}).text(settings.closeText);
