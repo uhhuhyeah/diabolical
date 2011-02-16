@@ -24,8 +24,10 @@
       // set content (from a URL or settings)
       if (settings.contentURL) {
         contentBox.html($('<img/>',{src: settings.pluginLocation + 'spinner.gif'}));
-        $.get(settings.contentURL, function(data) {
+        var jqxhr = $.get(settings.contentURL, function(data) {
           contentBox.html(data);
+        }).error(function(){
+          alert('error');
         });
       } else {
         contentBox.html(settings.contentText);
@@ -55,18 +57,20 @@
      
     this.getWindowSize = function() {
       var result = new Array(2);
-      var myWidth = 0, myHeight = 0;
-      if (typeof (window.innerWidth) == 'number') {
-        //Non-IE
-        myWidth = document.width;
-        myHeight = document.height;
-      } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-        //IE 6+ in 'standards compliant mode'
-        myWidth = document.documentElement.clientWidth;
-        myHeight = document.documentElement.clientHeight;
-      }
-      result[0] = myWidth;
-      result[1] = myHeight;
+      var docWidth = 0, docHeight = 0;
+      docWidth = $(document).width();
+      docHeight = $(document).height();
+      // if (typeof (window.innerWidth) == 'number') {
+      //   //Non-IE
+      //   myWidth = document.width;
+      //   myHeight = document.height;
+      // } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+      //   //IE 6+ in 'standards compliant mode'
+      //   myWidth = document.documentElement.clientWidth;
+      //   myHeight = document.documentElement.clientHeight;
+      // }
+      result[0] = docWidth;
+      result[1] = docHeight;
 
       console.log(result);
       return result;
