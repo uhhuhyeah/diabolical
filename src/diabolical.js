@@ -58,7 +58,7 @@
     this.getWindowSize = function() {
       var result = new Array(2);
       var docWidth = 0, docHeight = 0;
-      docWidth = $(document).width();
+      docWidth = $(window).width();
       docHeight = $(document).height();
       // if (typeof (window.innerWidth) == 'number') {
       //   //Non-IE
