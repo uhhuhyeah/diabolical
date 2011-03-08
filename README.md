@@ -143,6 +143,9 @@ Settings/Options<a name="settings"></a>
 	
 * `dialogWidth`
 	Width of the dialog box as an integer. Defaults to `400`(px).
+
+* `dialogLeftPosition`
+	Horizontal position of #dialogBox as an integer. Alters the #dialogBox's css `left` position property. Defaults to approximate center of window.
 	
 * `fadeInDialog`
 	Specifies whether the dialog box should gently fade in or not. Defaults to `1`. Pass any other value to prevent this behavior.
@@ -155,7 +158,6 @@ Settings/Options<a name="settings"></a>
 	
 * `title`
 	String to be displayed in the `#dialogBox h2`. Defaults to an empty string. Note, this h2 element is not inside the `#dialogContent` div so this can be set independently of `contentText` or `contentURL`.
-
 
 Known issues
 ------------

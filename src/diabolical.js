@@ -18,7 +18,7 @@
     var cssPath = settings.pluginLocation + settings.cssTheme;
 
     // Public methods
-    this.show = function() {
+    this.show = function(noScroll) {
       var contentBox = obj.modalContainer.find('#dialogContent');
       // set content (from a URL or settings)
       if (settings.contentURL) {
@@ -34,7 +34,7 @@
       if (settings.fadeInDialog == 1) {
         obj.modalContainer.hide().fadeIn();
       };
-      $('html, body').animate({scrollTop:20}, 'slow');
+      if (!noScroll) $('html, body').animate({scrollTop:20}, 'slow'); // TODO - a less uglier way of doing this. Should be a setting
     };
      
     this.hide = function() {
