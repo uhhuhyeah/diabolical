@@ -5,6 +5,7 @@
     var obj = this;
     var settings = {
       'dialogWidth':400,
+      'dialogLeftPosition':'',
       'closeText':'Close',
       'title': '',
       'contentText' : '',
@@ -47,7 +48,7 @@
     this.handleResize = function() {
       var windowSize = this.getWindowSize();
       $('#dialogBackground').css({'width':windowSize[0], 'height': windowSize[1]});
-      $('#dialogBox').css({'left': windowSize[0] / 2 - settings.dialogWidth / 2});
+      $('#dialogBox').css({'left': obj.leftPosition});
     };
      
     this.getWindowSize = function() {
@@ -55,6 +56,14 @@
       result[0] = $(window).width();
       result[1] = $(document).height();
       return result;
+    };
+    
+    this.leftPosition = function () {
+      if (settings.dialogLeftPosition != '') {
+        return leftPosition = settings.dialogLeftPosition;
+      } else {
+        return leftPosition = windowSize[0] / 2 - settings.dialogWidth / 2;
+      }
     };
       
        
@@ -65,7 +74,7 @@
       var closeLink = $('<a/>', {id:'dialogClose', href:'#'}).text(settings.closeText);
       var dialogCloseBar = $('<p/>', {id:'dialogCloseBar'}).append(closeLink);
       
-      var dialogBox = $('<div/>', {id:'dialogBox', css: {left: windowSize[0] / 2 - settings.dialogWidth / 2, top: 40, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
+      var dialogBox = $('<div/>', {id:'dialogBox', css: {left: obj.leftPosition, top: 40, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
       obj.modalContainer.append(dialogBox);
       
       elem.append('<link rel="stylesheet" href="' + cssPath + '">');
