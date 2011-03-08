@@ -59,6 +59,7 @@
     };
     
     this.leftPosition = function () {
+      var windowSize = this.getWindowSize();
       if (settings.dialogLeftPosition != '') {
         return leftPosition = settings.dialogLeftPosition;
       } else {
