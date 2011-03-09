@@ -5,11 +5,6 @@ Diabolical is a jQuery plugin for rendering Dialog boxes with flexible ways for 
 
 Brought to you by [Uh Huh Yeah](http://uhhuhyeah.com/) and that little nagging voice in my ear.
 
-WARNING
--------
-
-This library is a work in progress. **Please do not use this in production**. It hasn't been tested across browsers and is very opinionated. It's also littered with `console.log()` calls and isn't minified.
-
 Installation
 ------------
 
@@ -153,6 +148,9 @@ Settings/Options<a name="settings"></a>
 * `fadeOutDialog`
 	Specifies whether the dialog box should gently fade out on dismiss or not. Defaults to `1`. Pass any other value to prevent this behavior.
 	
+* `scrollToDialog`
+	Specifies whether browser window should scroll up to the dialog box on `show()`. Defaults to `1`. Pass any other value to prevent this behavior.
+
 * `pluginLocation`
 	The relative or absolute location of the plugin's src directory. Defaults to `/javascripts/diabolical/src/`. Note: don't forget that trailing slash!
 	

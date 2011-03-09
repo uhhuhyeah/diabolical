@@ -5,21 +5,22 @@
     var obj = this;
     var visible = false;
     var settings = {
-      'dialogWidth':400,
-      'dialogLeftPosition':'',
-      'closeText':'Close',
-      'title': '',
-      'contentText' : '',
-      'fadeOutDialog':1,
-      'fadeInDialog':1,
-      'cssTheme':'default.css',
-      'pluginLocation':'/javascripts/diabolical/src/'
+      dialogWidth:400,
+      dialogLeftPosition:'',
+      closeText:'Close',
+      title:'',
+      contentText: '',
+      fadeOutDialog:1,
+      fadeInDialog:1,
+      scrollToDialog:1,
+      cssTheme:'default.css',
+      pluginLocation:'/javascripts/diabolical/src/'
     };
     if (options) { $.extend(settings, options); };
     var cssPath = settings.pluginLocation + settings.cssTheme;
 
     // Public methods
-    this.show = function(noScroll) {
+    this.show = function() {
       var contentBox = obj.modalContainer.find('#dialogContent');
       // set content (from a URL or settings)
       if (settings.contentURL) {
@@ -35,7 +36,9 @@
       if (settings.fadeInDialog == 1) {
         obj.modalContainer.hide().fadeIn();
       };
-      if (!noScroll) $('html, body').animate({scrollTop:20}, 'slow'); // TODO - a less uglier way of doing this. Should be a setting
+      if (settings.scrollToDialog == 1) {
+        $('html, body').animate({scrollTop:20}, 'slow');
+      };
       obj.visible = true;
     };
      
