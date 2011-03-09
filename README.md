@@ -156,7 +156,10 @@ Settings/Options<a name="settings"></a>
 
 * `pluginLocation`
 	The relative or absolute location of the plugin's src directory. Defaults to `/javascripts/diabolical/src/`. Note: don't forget that trailing slash!
-	
+
+* `themeLocation`
+	The relative or absolute location of the your custom theme's css directory. Defaults to `/javascripts/diabolical/src/`. Note: don't forget that trailing slash!
+		
 * `title`
 	String to be displayed in the `#dialogBox h2`. Defaults to an empty string. Note, this h2 element is not inside the `#dialogContent` div so this can be set independently of `contentText` or `contentURL`.
 

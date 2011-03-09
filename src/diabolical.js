@@ -15,10 +15,11 @@
       fadeInDialog:1,
       scrollToDialog:1,
       cssTheme:'default.css',
-      pluginLocation:'/javascripts/diabolical/src/'
+      pluginLocation:'/javascripts/diabolical/src/',
+      themeLocation:'/javascripts/diabolical/src/'
     };
     if (options) { $.extend(settings, options); };
-    var cssPath = settings.pluginLocation + settings.cssTheme;
+    var cssPath = settings.themeLocation + settings.cssTheme;
 
     // Public methods
     this.show = function() {
