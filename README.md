@@ -160,6 +160,6 @@ Settings/Options<a name="settings"></a>
 Known issues
 ------------
 
-* I've literally no idea whether this will work outside of Safari 5 and jQuery 1.4.4. - it's a work in progress and probably shouldn't be used in production. Please report bugs to [david@uhhuhyeah.com](mailto:david@uhhuhyeah.com?subject=Diabolical), or feel free for send me a patch.
+* I've literally no idea whether this will work outside of Safari 5 and jQuery 1.4.4. - it's a work in progress and probably shouldn't be used in production without some due diligence on your part. Please report bugs to [david@uhhuhyeah.com](mailto:david@uhhuhyeah.com?subject=Diabolical), or feel free for send me a patch.
 
 	
