@@ -141,6 +141,9 @@ Settings/Options<a name="settings"></a>
 
 * `dialogLeftPosition`
 	Horizontal position of #dialogBox as an integer. Alters the #dialogBox's css `left` position property. Defaults to approximate center of window.
+
+* `dialogTopPosition`
+	Vertical position of the top edge of #dialogBox as an integer. Alters the #dialogBox's css `top` position property. Defaults to `40`(px).
 	
 * `fadeInDialog`
 	Specifies whether the dialog box should gently fade in or not. Defaults to `1`. Pass any other value to prevent this behavior.

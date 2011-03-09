@@ -7,6 +7,7 @@
     var settings = {
       dialogWidth:400,
       dialogLeftPosition:'',
+      dialogTopPosition:40,
       closeText:'Close',
       title:'',
       contentText: '',
@@ -36,8 +37,8 @@
       if (settings.fadeInDialog == 1) {
         obj.modalContainer.hide().fadeIn();
       };
-      if (settings.scrollToDialog == 1) {
-        $('html, body').animate({scrollTop:20}, 'slow');
+      if (settings.scrollToDialog == 1 && settings.dialogTopPosition > 20) {
+        $('html, body').animate({scrollTop:settings.dialogTopPosition - 20}, 'slow'); // Scroll to 20px above the top of the dialog
       };
       obj.visible = true;
     };
@@ -84,7 +85,7 @@
       var closeLink = $('<a/>', {id:'dialogClose', href:'#'}).text(settings.closeText);
       var dialogCloseBar = $('<p/>', {id:'dialogCloseBar'}).append(closeLink);
       
-      var dialogBox = $('<div/>', {id:'dialogBox', css: {left: obj.leftPosition, top: 40, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
+      var dialogBox = $('<div/>', {id:'dialogBox', css: {left: obj.leftPosition, top: settings.dialogTopPosition, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
       obj.modalContainer.append(dialogBox);
       
       elem.append('<link rel="stylesheet" href="' + cssPath + '">');
