@@ -3,6 +3,7 @@
     // init
     var elem = $(element);
     var obj = this;
+    var visible = false;
     var settings = {
       'dialogWidth':400,
       'dialogLeftPosition':'',
@@ -35,6 +36,7 @@
         obj.modalContainer.hide().fadeIn();
       };
       if (!noScroll) $('html, body').animate({scrollTop:20}, 'slow'); // TODO - a less uglier way of doing this. Should be a setting
+      obj.visible = true;
     };
      
     this.hide = function() {
@@ -43,6 +45,7 @@
       } else {
         $(obj.modalContainer).remove();
       }
+      obj.visible = false;
     };
      
     this.handleResize = function() {
@@ -58,7 +61,7 @@
       return result;
     };
     
-    this.leftPosition = function () {
+    this.leftPosition = function() {
       var windowSize = obj.getWindowSize();
       if (settings.dialogLeftPosition != '') {
         return leftPosition = settings.dialogLeftPosition;
@@ -66,7 +69,10 @@
         return leftPosition = windowSize[0] / 2 - settings.dialogWidth / 2;
       }
     };
-      
+    
+    this.isVisible = function(){
+      return obj.visible;
+    };  
        
     // Private methods
     var setup = function() {
