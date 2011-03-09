@@ -69,9 +69,9 @@
     this.leftPosition = function() {
       var windowSize = obj.getWindowSize();
       if (settings.dialogLeftPosition != '') {
-        return leftPosition = settings.dialogLeftPosition;
+        return settings.dialogLeftPosition;
       } else {
-        return leftPosition = windowSize[0] / 2 - settings.dialogWidth / 2;
+        return windowSize[0] / 2 - settings.dialogWidth / 2;
       }
     };
     
@@ -86,7 +86,7 @@
       var closeLink = $('<a/>', {id:'dialogClose', href:'#'}).text(settings.closeText);
       var dialogCloseBar = $('<p/>', {id:'dialogCloseBar'}).append(closeLink);
       
-      var dialogBox = $('<div/>', {id:'dialogBox', css: {left: obj.leftPosition, top: settings.dialogTopPosition, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
+      var dialogBox = $('<div/>', {id:'dialogBox', css: {left: obj.leftPosition(), top: settings.dialogTopPosition, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
       obj.modalContainer.append(dialogBox);
       
       elem.append('<link rel="stylesheet" href="' + cssPath + '">');
