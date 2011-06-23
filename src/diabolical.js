@@ -85,7 +85,7 @@
       obj.modalContainer = $('<div/>', {id: 'dialogBackground', css: { width: windowSize[0], height: windowSize[1], top: 0, left: 0, 'min-height': windowSize[1] }});
       var closeLink = $('<a/>', {id:'dialogClose', href:'#'}).text(settings.closeText);
       var dialogCloseBar = $('<p/>', {id:'dialogCloseBar'}).append(closeLink);
-      
+
       var dialogBox = $('<div/>', {id:'dialogBox', css: {left: obj.leftPosition(), top: settings.dialogTopPosition, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
       obj.modalContainer.append(dialogBox);
       
