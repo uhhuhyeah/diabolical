@@ -132,6 +132,9 @@ Settings/Options<a name="settings"></a>
 	
 * `contentURL`
 	Relative or absolute URL the contents of which should be displayed within the `#dialogContent` div. No default (it's nil).
+
+* `cssClass`
+	Specifies an optional css class to add to the `dialogBox` div. This is a string, not a selector. Eg `foo` not `.foo`.
 	
 * `cssTheme`
 	CSS filename of the dialog's theme. Defaults to `default.css`. CSS files live in `src` and should import the `base.css` file. You don't need to include a link to this stylesheet in your HTML. Diabolical will take care of loading it for you.

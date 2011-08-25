@@ -87,6 +87,9 @@
       var dialogCloseBar = $('<p/>', {id:'dialogCloseBar'}).append(closeLink);
 
       var dialogBox = $('<div/>', {id:'dialogBox', css: {left: obj.leftPosition(), top: settings.dialogTopPosition, 'width': settings.dialogWidth}}).append($('<h2/>').text(settings.title)).append($('<div/>', {id:'dialogContent'})).append(dialogCloseBar);
+      if (settings.cssClass) {
+        dialogBox.addClass(settings.cssClass)
+      };
       obj.modalContainer.append(dialogBox);
       
       elem.append('<link rel="stylesheet" href="' + cssPath + '">');
