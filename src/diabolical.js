@@ -16,7 +16,8 @@
       scrollToDialog:1,
       cssTheme:'default.css',
       pluginLocation:'/javascripts/diabolical/src/',
-      themeLocation:'/javascripts/diabolical/src/'
+      themeLocation:'/javascripts/diabolical/src/',
+      usesSpinJs: false
     };
     if (options) { $.extend(settings, options); };
     var cssPath = settings.themeLocation + settings.cssTheme;
@@ -26,7 +27,19 @@
       var contentBox = obj.modalContainer.find('#dialogContent');
       // set content (from a URL or settings)
       if (settings.contentURL) {
-        contentBox.html($('<img/>',{src: settings.pluginLocation + 'spinner.gif'}));
+        // spinner via spin.js (http://fgnass.github.com/spin.js/)
+        if (settings.usesSpinJs) {
+          try {
+            var spinner = new Spinner(settings.spinnerSettings).spin();
+            contentBox.html(spinner.el)
+          } catch(e) {
+            contentBox.html($('<img/>',{src: settings.pluginLocation + 'spinner.gif'}));
+          }
+        // or spinner.gif
+        } else {
+          contentBox.html($('<img/>',{src: settings.pluginLocation + 'spinner.gif'}));
+        }
+        
         $.get(settings.contentURL, function(data) {
           contentBox.html(data);
         });

@@ -166,9 +166,27 @@ Settings/Options<a name="settings"></a>
 * `title`
 	String to be displayed in the `#dialogBox h2`. Defaults to an empty string. Note, this h2 element is not inside the `#dialogContent` div so this can be set independently of `contentText` or `contentURL`.
 
+spin.js
+-------
+
+Diabolical supports the awesome [spin.js](http://fgnass.github.com/spin.js/) for fully customizable JavaScript based spinners. 
+
+Diabolical doesn't itself rely on `spin.js` so you'll need to include that in your project yourself. Diabolical will fall back to using `spinner.gif` from the `pluginLocation` if you don't wish to use `spin.js`.
+	
+* `spinnerSettings`
+	A dictionary of options to pass along to `spin.js` to render the spinner. See the [spin.js documentation](http://fgnass.github.com/spin.js/) for supported values.
+
 Known issues
 ------------
 
-* I've literally no idea whether this will work outside of Safari 5 and jQuery 1.4.4. - it's a work in progress and probably shouldn't be used in production without some due diligence on your part. Please report bugs to [david@uhhuhyeah.com](mailto:david@uhhuhyeah.com?subject=Diabolical), or feel free for send me a patch.
+* This plugin is a work in progress and probably shouldn't be used in production without some due diligence on your part. Please report bugs to [david@uhhuhyeah.com](mailto:david@uhhuhyeah.com?subject=Diabolical), or feel free for send me a patch.
+
+* IE6 has some issues (as you may have heard) with how Diabolical injects it's CSS files into the DOM. Until I get this fixed you might want to fall back to using some conditional comments to load the required CSS files.
+
+	<!--[if IE6]>
+		<link rel="stylesheet" href="/javascripts/diabolical/src/default.css">
+	<![endif]-->
+
+* I've only tested this plugin with  jQuery 1.4.4. - 1.6.x
 
 	
