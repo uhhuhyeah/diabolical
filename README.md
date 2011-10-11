@@ -22,9 +22,9 @@ Diabolical takes an optional list of settings (as a JSON hash) where you can ove
 	<script type="text/javascript">
 		// setup
 		var options = {
-			'cancelText':'Cancel',
-			'title': 'Behold!',
-			'contentText: 'Check out my diabolically awesome dialog box.'
+			cancelText : 'Cancel',
+			title : 'Behold!',
+			contentText : 'Check out my diabolically awesome dialog box.'
 		};
 	</script>
 	
@@ -33,9 +33,9 @@ Next we attach the dialog to a element on the page. Which element you choose is 
 	<script type="text/javascript">
 		// setup
 		var options = {
-			'cancelText':'Cancel',
-			'title': 'Behold!',
-			'contentText: 'Check out my diabolically awesome dialog box.'
+			cancelText : 'Cancel',
+			title : 'Behold!',
+			contentText : 'Check out my diabolically awesome dialog box.'
 		};
 
 		// attach to body and grab a variable for the dialog that we can reference later
@@ -53,9 +53,9 @@ A common use case is to trigger the dialog box when the user clicks on a specifi
 		$(function() {
 			// setup
 			var options = {
-				'cancelText':'Cancel',
-				'title': 'Behold!',
-				'contentText: 'Check out my diabolically awesome dialog box.'
+				cancelText : 'Cancel',
+				title : 'Behold!',
+				contentText : 'Check out my diabolically awesome dialog box.'
 			};
 
 			// attach to body and grab a variable for the dialog that we can reference later
@@ -81,8 +81,8 @@ You can pass plain strings to the dialog using `title`, `contentText` or both.
 
 	<script>
 		var options = {
-			'title': 'Behold!',
-			'contentText' : 'Check out my diabolically awesome dialog box.'
+			title: 'Behold!',
+			contentText : 'Check out my diabolically awesome dialog box.'
 		};
 	</script>
 
@@ -91,7 +91,7 @@ You can also pass HTML to the `contentText` option.
 
 	<script>
 		var options = {
-			'contentText' : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
+			contentText : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
 		};
 	</script>
 	
@@ -104,7 +104,7 @@ You can also grab some other element in the DOM to display in the dialog.
 
 	<script>
 		var options = {
-			'contentText' : $('#dialog-me')
+			contentText : $('#dialog-me')
 		};
 	</script>
 	
@@ -115,7 +115,7 @@ This is the hidden gem. During setup you can pass a URL that points to the conte
 
 	<script>
 		var options = {
-			'contentURL' : '/login'
+			contentURL : '/login'
 		};
 	</script>
 
@@ -175,6 +175,22 @@ Diabolical doesn't itself rely on `spin.js` so you'll need to include that in yo
 	
 * `spinnerSettings`
 	A dictionary of options to pass along to `spin.js` to render the spinner. See the [spin.js documentation](http://fgnass.github.com/spin.js/) for supported values.
+	
+	<script>
+		var options = {
+			contentURL : '/login',
+			spinnerSettings : {
+			  lines : 12, // The number of lines to draw
+			  length : 7, // The length of each line
+			  width : 4, // The line thickness
+			  radius : 10, // The radius of the inner circle
+			  color : '#000', // #rgb or #rrggbb
+			  speed : 1, // Rounds per second
+			  trail : 60, // Afterglow percentage
+			  shadow : false // Whether to render a shadow
+			}
+		};
+	</script>
 
 Known issues
 ------------
