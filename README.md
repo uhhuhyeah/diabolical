@@ -176,21 +176,23 @@ Diabolical doesn't itself rely on `spin.js` so you'll need to include that in yo
 * `spinnerSettings`
 	A dictionary of options to pass along to `spin.js` to render the spinner. See the [spin.js documentation](http://fgnass.github.com/spin.js/) for supported values.
 
-  <script>
-  	var options = {
-  		contentURL : '/login',
-  		spinnerSettings : {
-  		  lines : 12, // The number of lines to draw
-  		  length : 7, // The length of each line
-  		  width : 4, // The line thickness
-  		  radius : 10, // The radius of the inner circle
-  		  color : '#000', // #rgb or #rrggbb
-  		  speed : 1, // Rounds per second
-  		  trail : 60, // Afterglow percentage
-  		  shadow : false // Whether to render a shadow
-  		}
-  	};
-  </script>
+```
+ <script>
+ 	var options = {
+ 		contentURL : '/login',
+ 		spinnerSettings : {
+ 		  lines : 12, // The number of lines to draw
+ 		  length : 7, // The length of each line
+ 		  width : 4, // The line thickness
+ 		  radius : 10, // The radius of the inner circle
+ 		  color : '#000', // #rgb or #rrggbb
+ 		  speed : 1, // Rounds per second
+ 		  trail : 60, // Afterglow percentage
+ 		  shadow : false // Whether to render a shadow
+ 		}
+ 	};
+ </script>
+```
 
 Known issues
 ------------
@@ -199,9 +201,11 @@ Known issues
 
 * IE6 has some issues (as you may have heard) with how Diabolical injects it's CSS files into the DOM. Until I get this fixed you might want to fall back to using some conditional comments to load the required CSS files.
 
-  &lt;!--[if IE6]&gt;
-  	<link rel="stylesheet" href="/javascripts/diabolical/src/default.css">
-  &lt;![endif]--&gt;
+```
+ &lt;!--[if IE6]&gt;
+ 	<link rel="stylesheet" href="/javascripts/diabolical/src/default.css">
+ &lt;![endif]--&gt;
+```
 
 * I've only tested this plugin with  jQuery 1.4.4. - 1.6.x
 
