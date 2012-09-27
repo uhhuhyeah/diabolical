@@ -12,25 +12,50 @@ This library is a jQuery plugin so make sure to include [jQuery](http://jquery.c
 
 Copy the diabolical directory to where ever you like keeping your javascript files. For example `/javascripts`
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script src="/javascripts/diabolical/src/diabolical.js" type="text/javascript"></script>
-	
+```HTML
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="/javascripts/diabolical/src/diabolical.js" type="text/javascript"></script>
+```	
+
 ### Set up
 
 Diabolical takes an optional list of settings (as a JSON hash) where you can override the defaults. See '[Settings/Options](#settings)' for available options and their defaults.
 
-	<script type="text/javascript">
-		// setup
-		var options = {
-			cancelText : 'Cancel',
-			title : 'Behold!',
-			contentText : 'Check out my diabolically awesome dialog box.'
-		};
-	</script>
-	
+```HTML
+<script type="text/javascript">
+	// setup
+	var options = {
+		cancelText : 'Cancel',
+		title : 'Behold!',
+		contentText : 'Check out my diabolically awesome dialog box.'
+	};
+</script>
+```	
+
 Next we attach the dialog to a element on the page. Which element you choose is mostly personal preference, but you should only attach one dialog instance to any one element. By default, you'll probably use the `body` element.
-	
-	<script type="text/javascript">
+```HTML	
+<script type="text/javascript">
+	// setup
+	var options = {
+		cancelText : 'Cancel',
+		title : 'Behold!',
+		contentText : 'Check out my diabolically awesome dialog box.'
+	};
+
+	// attach to body and grab a variable for the dialog that we can reference later
+	$('body').diabolical(options);
+	var dialog = $('body').data('diabolical');
+</script>
+```
+### Use	
+
+A common use case is to trigger the dialog box when the user clicks on a specific link.
+
+```HTML
+<a href="/login" id="login-link">Click here to login</a>
+
+<script type="text/javascript">
+	$(function() {
 		// setup
 		var options = {
 			cancelText : 'Cancel',
@@ -41,36 +66,17 @@ Next we attach the dialog to a element on the page. Which element you choose is 
 		// attach to body and grab a variable for the dialog that we can reference later
 		$('body').diabolical(options);
 		var dialog = $('body').data('diabolical');
-	</script>
+		
+		// Bind the link's click event to the dialog's show() method
+		$('#login-link').click(function() {
+			dialog.show();
+			return false; // prevents the elements default behavour. I.e. taking the user to '/login'.
+		});
+		
+	}); // end of doc ready
+</script>
+```
 
-### Use	
-
-A common use case is to trigger the dialog box when the user clicks on a specific link.
-
-	<a href="/login" id="login-link">Click here to login</a>
-	
-	<script type="text/javascript">
-		$(function() {
-			// setup
-			var options = {
-				cancelText : 'Cancel',
-				title : 'Behold!',
-				contentText : 'Check out my diabolically awesome dialog box.'
-			};
-
-			// attach to body and grab a variable for the dialog that we can reference later
-			$('body').diabolical(options);
-			var dialog = $('body').data('diabolical');
-			
-			// Bind the link's click event to the dialog's show() method
-			$('#login-link').click(function() {
-				dialog.show();
-				return false; // prevents the elements default behavour. I.e. taking the user to '/login'.
-			});
-			
-		}); // end of doc ready
-	</script>
-	
 Passing content to be displayed
 -------------------------------
 
@@ -79,45 +85,53 @@ Diabolical supports *four* ways of being passed content to be displayed
 **1. Plain Text**
 You can pass plain strings to the dialog using `title`, `contentText` or both.
 
-	<script>
-		var options = {
-			title: 'Behold!',
-			contentText : 'Check out my diabolically awesome dialog box.'
-		};
-	</script>
+```HTML
+<script>
+	var options = {
+		title: 'Behold!',
+		contentText : 'Check out my diabolically awesome dialog box.'
+	};
+</script>
+```
 
 **2. HTML**
 You can also pass HTML to the `contentText` option.
 
-	<script>
-		var options = {
-			contentText : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
-		};
-	</script>
-	
+```HTML
+<script>
+	var options = {
+		contentText : '<h3>Check out my diabolically <a href="#">awesome</a> dialog box.</h3>'
+	};
+</script>
+```
+
 **3. jQuery node**
 You can also grab some other element in the DOM to display in the dialog. 
 
-	<div id="dialog-me">
-		<h2>Behold!</h2>
-	</div>
+```HTML
+<div id="dialog-me">
+	<h2>Behold!</h2>
+</div>
 
-	<script>
-		var options = {
-			contentText : $('#dialog-me')
-		};
-	</script>
-	
+<script>
+	var options = {
+		contentText : $('#dialog-me')
+	};
+</script>
+```
+
 Note, this will remove the `dialog-me` div from the page. Use `$('#dialog-me').clone()` instead if you want to leave the original `dialog-me` div alone.
 
 **4. Remote resource**
 This is the hidden gem. During setup you can pass a URL that points to the content you want to pass into the dialog and it doesn't get fetched until or unless `show()` gets called. The remote resource is fetched asynchronously of course and the dialog is loaded instantly (with a spinner.gif to keep your users amused should the remote response take a while to return it's content).
 
-	<script>
-		var options = {
-			contentURL : '/login'
-		};
-	</script>
+```HTML
+<script>
+	var options = {
+		contentURL : '/login'
+	};
+</script>
+```
 
 If you're using Rails, you might want to consider registering a new MIME type of `:dialog` then you can have view files especially for the dialog like `app/views/sessions/new.dialog.erb`.
 
@@ -177,7 +191,7 @@ Diabolical doesn't itself rely on `spin.js` so you'll need to include that in yo
 	A dictionary of options to pass along to `spin.js` to render the spinner. See the [spin.js documentation](http://fgnass.github.com/spin.js/) for supported values.
 
 
-```
+```HTML
  <script>
  	var options = {
  		contentURL : '/login',
@@ -202,7 +216,7 @@ Known issues
 
 * IE6 has some issues (as you may have heard) with how Diabolical injects it's CSS files into the DOM. Until I get this fixed you might want to fall back to using some conditional comments to load the required CSS files.
 
-```
+```HTML
  <!--[if IE6]>
  	<link rel="stylesheet" href="/javascripts/diabolical/src/default.css">
  <![endif]-->
